@@ -3,7 +3,7 @@
 <div class="panel panel-primary">
 	<a href="/resume/edit"><img class="img-responsive photo" src="/resume/media/avatar/8d5de19b-00bd-49a1-b531-c352c3d33b08.jpg" alt="photo"></a>
 	<h1 class="text-center">
-		<a style="color: black;" href="/resume/edit">${name != null ? name : 'Richard Hendricks' }</a>
+		<a style="color: black;" href="/resume/edit">${fullName}</a>
 	</h1>
 	<h6 class="text-center">
 		<strong>Odessa, Ukraine</strong>

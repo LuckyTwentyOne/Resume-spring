@@ -10,7 +10,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
 @Configuration
-@ComponentScan({ "com.epam.resume.service.impl", 
+@ComponentScan({ "com.epam.resume.service.ipml", 
 				 "com.epam.resume.controller",
 				 "com.epam.resume.filter", 
 				 "com.epam.resume.listener"})
