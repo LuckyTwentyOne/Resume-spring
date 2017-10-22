@@ -53,7 +53,7 @@ public class TestDataGenerator {
 
 	private static final String PHOTO_PATH = "external/test-data/photos/";
 	private static final String CERTIFICATES_PATH = "external/test-data/certificates/";
-	private static final String MEDIA_DIR = "D:\\workspace\\resume-spring\\src\\main\\webapp\\media";
+	private static final String MEDIA_DIR = "D:\\eclipse-workspace\\Resume-spring\\src\\main\\webapp\\media";
 	private static final String COUTRY = "Ukraine";
 	private static final String[] CITIES = { "Kharkiv", "Kiyv", "Odessa" };
 	private static final String[] FOREGIN_LANGUAGES = { "Spanish", "French", "German", "Italian" };

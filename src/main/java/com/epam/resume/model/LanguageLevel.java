@@ -1,5 +1,8 @@
 package com.epam.resume.model;
 
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
+
 public enum LanguageLevel {
 
 	BEGINNER,
@@ -24,7 +27,7 @@ public enum LanguageLevel {
 		return name().toLowerCase();
 	}
 	
-	/*@Converter
+	@Converter
 	public static class PersistJPAConverter implements AttributeConverter<LanguageLevel, String> {
 		@Override
 		public String convertToDatabaseColumn(LanguageLevel attribute) {
@@ -34,5 +37,5 @@ public enum LanguageLevel {
 		public LanguageLevel convertToEntityAttribute(String dbValue) {
 			return LanguageLevel.valueOf(dbValue.toUpperCase());
 		}
-	}*/
+	}
 }

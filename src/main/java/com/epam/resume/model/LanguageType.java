@@ -1,5 +1,8 @@
 package com.epam.resume.model;
 
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
+
 public enum LanguageType {
 
 	ALL,
@@ -22,7 +25,7 @@ public enum LanguageType {
 		}
 	}
 	
-	/*@Converter
+	@Converter
 	public static class PersistJPAConverter implements AttributeConverter<LanguageType, String> {
 		@Override
 		public String convertToDatabaseColumn(LanguageType attribute) {
@@ -32,5 +35,5 @@ public enum LanguageType {
 		public LanguageType convertToEntityAttribute(String dbValue) {
 			return LanguageType.valueOf(dbValue.toUpperCase());
 		}
-	}*/
+	}
 }

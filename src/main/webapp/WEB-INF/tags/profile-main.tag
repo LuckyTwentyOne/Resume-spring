@@ -1,15 +1,15 @@
 <%@ tag pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
 
 <div class="panel panel-primary">
-	<a href="/resume/edit"><img class="img-responsive photo" src="/resume/media/avatar/8d5de19b-00bd-49a1-b531-c352c3d33b08.jpg" alt="photo"></a>
+	<a href="/resume/edit/${profile.uid}"><img class="img-responsive photo" src="${profile.profilePhoto}" alt="photo"></a>
 	<h1 class="text-center">
-		<a style="color: black;" href="/resume/edit">${fullName}</a>
+		<a style="color: black;" href="/resume/edit">${profile.uid}</a>
 	</h1>
 	<h6 class="text-center">
-		<strong>Odessa, Ukraine</strong>
+		<strong>${profile.city}, ${profile.country}</strong>
 	</h6>
 	<h6 class="text-center">
-		<strong>Age:</strong> 27, <strong>Birthday: </strong> Feb 26, 1989
+		<strong>Age:</strong> ${profile.age}, <strong>Birthday: </strong> ${profile.birthDay}
 	</h6>
 	<div class="list-group contacts">
 		<a class="list-group-item" href="tel:+380507525137"><i class="fa fa-phone"></i> +380507525137</a> 
