@@ -9,10 +9,11 @@
 <body class="resume">
 	<jsp:include page="../section/header.jsp" />
 	<jsp:include page="../section/nav.jsp" />
-	<section class="main">
+	<section class="container">
 		<sitemesh:write property='body' />
 	</section>
 	<jsp:include page="../section/footer.jsp" />
 	<jsp:include page="../section/js.jsp" />
+	<sitemesh:write property='page.js-init' />
 </body>
 </html>
