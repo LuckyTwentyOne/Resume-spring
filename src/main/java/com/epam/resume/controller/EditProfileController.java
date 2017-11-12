@@ -9,12 +9,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.epam.resume.form.LanguageForm;
 import com.epam.resume.form.SkillForm;
 import com.epam.resume.reposiory.storage.ProfileRepository;
 import com.epam.resume.reposiory.storage.SkillCategoryRepository;
+import com.epam.resume.service.StaticDataService;
 
 @Controller
 public class EditProfileController {
+	
+	@Autowired
+	private StaticDataService staticDataService;
 
 	@Autowired
 	private SkillCategoryRepository skillCategoryRepository;
@@ -45,5 +50,26 @@ public class EditProfileController {
 	private String gotoSkillsJSP(Model model){
 		model.addAttribute("skillCategories", skillCategoryRepository.findAll(new Sort("id")));
 		return "edit/skills";
+	}
+	
+	@RequestMapping(value = "/edit/languages", method = RequestMethod.GET)
+	public String getEditLanguages(Model model) {
+		model.addAttribute("languageForm", new LanguageForm(profileRepository.findOne(1L).getLanguages()));
+		return gotoLanguagesJSP(model);
+	}
+	
+	@RequestMapping(value = "/edit/languages", method = RequestMethod.POST)
+	public String saveEditLanguages(@ModelAttribute("languageForm") LanguageForm form, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return gotoLanguagesJSP(model);
+        }
+		//TODO Update skills 
+		return "redirect:/mike-ross";
+	}
+	
+	private String gotoLanguagesJSP(Model model){
+		model.addAttribute("languageTypes",  staticDataService.getAllLanguageTypes());
+		model.addAttribute("languageLevels", staticDataService.getAllLanguageLevels());
+		return "edit/languages";
 	}
 }
