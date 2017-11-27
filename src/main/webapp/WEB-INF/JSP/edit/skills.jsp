@@ -3,6 +3,7 @@
 <%@ taglib prefix="form"   	uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="resume" 	tagdir="/WEB-INF/tags"%>
 
+<resume:edit-tab-header selected="skills" />
 
 <div class="panel panel-default">
 	<div class="panel-body">
@@ -20,7 +21,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="javascript:void(0);">+ Добавить навык</a>
+					<a href="javascript:resume.ui.addBlock();">+ Добавить навык</a>
 				</div>
 			</div>
 			<hr />
@@ -32,3 +33,7 @@
 		</form:form>
 	</div>
 </div>
+
+<script id="ui-block-template" type="text/x-handlebars-template">
+	<resume:edit-skill-block index="{{blockIndex}}" />
+</script>

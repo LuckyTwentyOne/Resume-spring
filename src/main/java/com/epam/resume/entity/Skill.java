@@ -28,13 +28,11 @@ public class Skill extends AbstractEntity<Long> implements Serializable, Profile
 	private Long id;
 
 	@Column(nullable=false, length=50)
-	@EnglishLanguage
-	@Size(min=1)
+	@EnglishLanguage(withSpechSymbols = false, withNumbers = false)
 	private String category;
 
 	@Column(nullable=false, length=2147483647)
 	@EnglishLanguage
-	@Size(min=1)
 	private String value;
 
 	//bi-directional many-to-one association to Profile

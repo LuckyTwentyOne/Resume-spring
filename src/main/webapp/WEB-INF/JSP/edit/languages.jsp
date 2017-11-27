@@ -3,6 +3,7 @@
 <%@ taglib prefix="form"   	uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="resume" 	tagdir="/WEB-INF/tags"%>
 
+<resume:edit-tab-header selected="languages" />
 
 <div class="panel panel-default">
 	<div class="panel-body">
@@ -16,7 +17,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<a href="javascript:void(0);">+ Добавить язык</a>
+					<a href="javascript:resume.ui.addBlock();">+ Добавить язык</a>
 				</div>
 			</div>
 			<hr />
@@ -28,3 +29,7 @@
 		</form:form>
 	</div>
 </div>
+
+<script id="ui-block-template" type="text/x-handlebars-template">
+	<resume:edit-language-block index="{{blockIndex}}" />
+</script>

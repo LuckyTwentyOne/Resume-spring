@@ -1,5 +1,12 @@
-<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" trimDirectiveWhitespaces="true"%>
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"
+	trimDirectiveWhitespaces="true"%>
 
 <script src="/resume/static/js/jquery.js"></script>
 <script src="/resume/static/js/bootstrap.js"></script>
+<script src="/resume/static/js/bootstrap-slider-6.1.6.js"></script>
+<script src="/resume/static/js/handlebars-4.0.5.js"></script>
+<script src="/resume/static/js/bootstrap-datepicker-1.6.0.js"></script>
+<script src="/resume/static/js/fileinput-4.3.2.js"></script>
 <script src="/resume/static/js/app.js"></script>
+
+<script src="/resume/static/js/messages.jsp?v=${jsMessagesVersion }"></script>

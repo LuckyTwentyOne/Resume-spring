@@ -1,7 +1,11 @@
 package com.epam.resume.model;
 
+import java.beans.PropertyEditorSupport;
+
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
+
+import com.epam.resume.util.DataUtil;
 
 public enum LanguageLevel {
 
@@ -25,6 +29,19 @@ public enum LanguageLevel {
 	
 	public String getDbValue(){
 		return name().toLowerCase();
+	}
+	
+	public String getCaption(){
+		return DataUtil.capitalizeName(name()).replace("_", "-");
+	}
+	
+	public static PropertyEditorSupport getPropertyEditor(){
+		return new PropertyEditorSupport(){
+			@Override
+			public void setAsText(String sliderIntValue) throws IllegalArgumentException {
+				setValue(LanguageLevel.values()[Integer.parseInt(sliderIntValue)]);
+			}
+		};
 	}
 	
 	@Converter

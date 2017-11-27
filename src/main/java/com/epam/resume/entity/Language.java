@@ -15,6 +15,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.epam.resume.annotation.constraints.EnglishLanguage;
 import com.epam.resume.model.LanguageLevel;
 import com.epam.resume.model.LanguageType;
 
@@ -34,6 +35,7 @@ public class Language extends AbstractEntity<Long> implements Serializable, Prof
 	private LanguageLevel level;
 
 	@Column(nullable = false, length = 30)
+	@EnglishLanguage(withSpechSymbols=false, withNumbers=false, withPunctuations=false)
 	private String name;
 
 	@Column
